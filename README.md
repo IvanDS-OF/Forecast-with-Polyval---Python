@@ -7,9 +7,21 @@ El pronóstico es una previsión de eventos futuros del comportamiento de un sis
 
 
 ## Polyfit
+Polyfit es una función de ls librería de **numpy** y la podemos mandar a llamar de la siguuiente manera: 
 
+```
+import numyp as np
+np.polyval(x, y, grado)
+```
+Los argumentos que son obligatorios introducir son:
 
+x == array : Representa los valores en el eje de las X, en caso de ser aplicado a una serie temporal podemos poner al vector de tiempo.
+y == array : Representa los valores del eje de las y's, en caso de ser aplicado a una serie temporan podemos poner al vecor de la información
+grado == int 
 
+Recordemos brvemente la ecuación de la función polyval: 
+
+$$ a = 2$$
 
 
 ## Código / Code
