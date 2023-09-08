@@ -20,8 +20,6 @@ def fx(x1,coef):
     return fx
 
 
-ceroDer = []
-guardar=[]
 
 V = [0.0 for i in range (0, 21)]
 
@@ -40,18 +38,12 @@ for j in range(0,200):
     
     grado = 5
     tiempo = np.arange(j, j+21, 1) #Generamos un vector para realizar los sampleos con recpecto del tiempo
-    #print(tiempo)
 
     
     #np.polifit (x, y, grado)
     coef0 = np.polyfit(np.array(tiempo), np.array(vec_datos[j:j+21]), grado)
     coef1 = np.polyfit(np.array(tiempo), np.array(vec_datos[j:j+21]), 2)
-    #print(coef)
-    #print(np.size(coef))
-    #np.polyvail(coef, x) x = datos de más
-    #p = np.polyval(coef, 102)
-    #print(p)
-    #print(np.size(p))
+
 
     for v in np.arange(j+20,j+25, 0.5):
         p = np.polyval(coef1,v)
@@ -59,26 +51,14 @@ for j in range(0,200):
 
     print("El valor de V es: ", len(V))
 
-    #tiempo1 = np.linspace(0,20,200) #Eje X especial para hacer la predicción
     incremento = 0.5
     tiempo1 = np.arange(j,j+21, incremento)
     nPrueba0 = fx(tiempo1, coef0)   #funcion
-
-
-    #Los valores a derivar son nPruebas
-    #print("datos de predicción")
-    #print(nPrueba)
-    #print(np.size(nPrueba))
 
     fun0 = nPrueba0
     
     t = incremento
 
-    #print("derivada")
-    #print(der)
-    #plt.close()
-    #print(V)
-    #print(len(V[20:]))
     ss = np.arange(j+20, j+25, 0.49)
     print("El valor de SS es: ", len(ss))
     
@@ -89,15 +69,13 @@ for j in range(0,200):
     plt.legend(loc='upper left', fontsize=8)
     axs1.scatter(ss, V[20:], c = "r")
 
-         
-    #plt.show()
-    #plt.pause(2)
-    plt.pause(1)
+
     num = float(input())
     vec_datos.append(num)
 
     V = [0.0 for i in range (0, 21)]
-    print("El len de VVV es: ",  len(V))
+
+    plt.pause(0.1)
     axs1.cla()
 
 
