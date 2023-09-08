@@ -2,83 +2,50 @@
 # Created by Eng. Ivan Duran
 
 
-# First import all the libraries
+# First at all,  import all the libraries
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 import numpy as np
 import time
 
-def fx(x1,coef): 
-    """
-    Función para hacer calculo de predicción
-    """
-    fx=0
-    n = len(coef) - 1
-    for p in coef:
-        fx = fx+p*x1**n
-        n = n-1
-    return fx
+# Then define all the functions, in the same script. 
 
 
-
+# Creamos los vectores vacios que serán llenados después en las iteraciones.
 V = [0.0 for i in range (0, 21)]
-
 vec_datos = [0.0 for i in range (0, 21)]
 
-
-x = np.arange(0,101,1)
-es = np.arange(0,20,1)
-
-
+# Creamos la figura donde plotearemos la gráfica
 fig1, axs1 = plt.subplots()
+j = 0
 
-
-for j in range(0,200):
+# Comenzamos con las iteraciones.
+while True:
     axs1.axis([j, j+25, -1.5, 1.5]) #ylim(xmin, xmax, ymin, ymax)
     
-    grado = 5
     tiempo = np.arange(j, j+21, 1) #Generamos un vector para realizar los sampleos con recpecto del tiempo
 
-    
-    #np.polifit (x, y, grado)
-    coef0 = np.polyfit(np.array(tiempo), np.array(vec_datos[j:j+21]), grado)
-    coef1 = np.polyfit(np.array(tiempo), np.array(vec_datos[j:j+21]), 2)
-
+    coef1 = np.polyfit(np.array(tiempo), np.array(vec_datos[j:j+21]), 1)
 
     for v in np.arange(j+20,j+25, 0.5):
         p = np.polyval(coef1,v)
         V.append(p)
 
-    print("El valor de V es: ", len(V))
+    ss = [ i+1 for i in np.linspace(j+20, j+25, 11) ]
 
-    incremento = 0.5
-    tiempo1 = np.arange(j,j+21, incremento)
-    nPrueba0 = fx(tiempo1, coef0)   #funcion
-
-    fun0 = nPrueba0
-    
-    t = incremento
-
-    ss = np.arange(j+20, j+25, 0.49)
-    print("El valor de SS es: ", len(ss))
-    
     axs1.set_title("Prueba POT")
     axs1.plot(tiempo, vec_datos[j:j+21], c="b", linewidth="2", label='MEDICION')
-    #plt.plot(np.arange(101,107,1), coef, c="r")
-    axs1.grid()
-    plt.legend(loc='upper left', fontsize=8)
     axs1.scatter(ss, V[20:], c = "r")
-
+    plt.legend(loc='upper left', fontsize=8)
+    axs1.grid()
+    plt.pause(0.1)
 
     num = float(input())
     vec_datos.append(num)
 
     V = [0.0 for i in range (0, 21)]
 
-    plt.pause(0.1)
     axs1.cla()
-
-
-
-
+    
+    j = j + 1
 
