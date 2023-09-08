@@ -22,7 +22,7 @@ grado == int
 Recordemos brvemente la ecuación de la función polyval, lo que la función hace es minimizar el error cuadrado mediante la siguiente ecuación:
 
 
-$$ E = sum_{j=0}^k [p (x_j) - y]^2 $$
+$$ E = \sum_{j=0}^k [p (x_j) - y]^2 $$
 
 
 ## Código / Code
