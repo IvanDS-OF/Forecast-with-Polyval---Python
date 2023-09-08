@@ -19,9 +19,8 @@ x == array : Representa los valores en el eje de las X, en caso de ser aplicado 
 y == array : Representa los valores del eje de las y's, en caso de ser aplicado a una serie temporan podemos poner al vecor de la información
 grado == int 
 
-Recordemos brvemente la ecuación de la función polyval: 
-
-$$ a = 2$$
+Recordemos brvemente la ecuación de la función polyval, lo que la función hace es minimizar el error cuadrado mediante la siguiente ecuación
+$$ E = sum_{j=0}^k [p (x_j) - y]^2 $$
 
 
 ## Código / Code
