@@ -24,6 +24,8 @@ Recordemos brvemente la ecuación de la función polyval, lo que la función hac
 
 $$ E = \sum_{j=0}^k [p (x_j) - y]^2 $$
 
+De igual forma podemos encontrar más información [en el siguiente link](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html) que pertenece a la documentación oficial de la librería. 
+
 
 ## Código / Code
 
