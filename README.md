@@ -28,9 +28,21 @@ De igual forma podemos encontrar más información [en el siguiente link](https:
 
 
 ## Código / Code
+El código genera un pronóstico usando la función polyval, al mismo tiempo que la base de datos es posible que el usuario la llene en tiempo real introduciendo valores desde la terminal. 
 
+Primero es necesario importar las librerias necesarias para el funcionamiento del programa como son: 
 
+```
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+import numpy as np
+import time
+```
+Posteriormente creamos dos vectores vacios con valores flotantes usando la forma de _list cmoprehension_
 
+Luego inicializamos la figura en donde vamos a plotear la figura e inicializamos tanto una variable que será iterada de forma infinita y un ciclo **while True**.
+
+Dentro del ciclo infinito podemos encontrar que primero vamos a fijar los ejes superiores e inferiores para mayor estabilidad la animación y al mismo tiempo colocamos unainstrucción para que los ejes aterales se vayan actualzando cada que se agregue un nuevo valor a la lista.
 
 
 ## Simulación / Simulation
