@@ -42,7 +42,7 @@ Posteriormente creamos dos vectores vacios con valores flotantes usando la forma
 
 Luego inicializamos la figura en donde vamos a plotear la figura e inicializamos tanto una variable que será iterada de forma infinita y un ciclo **while True**.
 
-Dentro del ciclo infinito podemos encontrar que primero vamos a fijar los ejes superiores e inferiores para mayor estabilidad la animación y al mismo tiempo colocamos unainstrucción para que los ejes aterales se vayan actualzando cada que se agregue un nuevo valor a la lista.
+Dentro del ciclo infinito podemos encontrar que primero vamos a fijar los ejes superiores e inferiores para mayor estabilidad la animación y al mismo tiempo colocamos una instrucción para que los ejes aterales se vayan actualzando cada que se agregue un nuevo valor a la lista.
 
 
 ## Simulación / Simulation
