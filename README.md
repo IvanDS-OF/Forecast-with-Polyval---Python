@@ -45,6 +45,32 @@ Luego inicializamos la figura en donde vamos a plotear la figura e inicializamos
 Dentro del ciclo infinito podemos encontrar que primero vamos a fijar los ejes superiores e inferiores para mayor estabilidad la animación y al mismo tiempo colocamos una instrucción para que los ejes aterales se vayan actualzando cada que se agregue un nuevo valor a la lista.
 
 
+> Nota: Los valores no son almacenados en ninguna base de datos, solamente serán visibles y utilizados en cada iteración del programa. 
+
+Después de fijar los ejes correspondientes, creamos un vecor de tiempo que nos servirá para poder plotear correcctamente la figura completa en los últimos 20 espacios. 
+
+Luego creamos la variaable llamada **coef** que utilizará el método **polyfit** de la librería **numpy** y que nos entregará a la slida una lista de dos valores. 
+
+
+Posteriormente, se crea un ciclo for que nos servirá para poder aplicar la función que nos dará un pronóstico aproximado dado el comportamoento de los últimos 20 datos registrados (que igual son los que se muestran en la gráfica).
+
+Se tiene que realizar en un ciclo for ya que el método polyval de numpy solamente evalua con un argumento unitario y nos devuelve igual un valor unitario. 
+
+Luego creamos una lista llamada **vector_pronostico** que se irá actualizando cada iteración. Esta lista nos ayudará para ubicar de mejor manera al vecor que nos arroja la predicción.
+
+Finalmente, mandamos a plotear todos los datos, usando la sintaxis que se definió previamente con la definición de la figura. Los datos mostrados son los siguientes: 
+
+```
+Medición -> Azul
+Pornóstico -> Rojo
+```
+
+Despues del ploteo inicial, le pedimos al usiario ingresar un valor para ser tomado como un valor más de la medición.
+
+Al final, mandamos a limpiar tanto nuestro vector de predicción cmo nuestra figura con la función **cla()** de matplotlib 
+
+
+
 ## Simulación / Simulation
 
 
