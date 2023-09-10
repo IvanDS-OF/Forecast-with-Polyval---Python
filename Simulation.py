@@ -9,6 +9,19 @@ import numpy as np
 import time
 
 # Then define all the functions, in the same script. 
+def pedir_numero_flotante(): 
+    while True:
+        numero = input()
+        if numero == "s":
+            numero = "s"
+            return numero
+        try:
+            numero = float(numero)
+            return numero
+        except: 
+            print("Por favor introduce un número entero o flotante \npero de preferencia flotante \ngracias :D")
+            continue
+    
 
 
 # Creamos los vectores vacios que serán llenados después en las iteraciones.
@@ -30,17 +43,18 @@ while True:
     for v in np.arange(j+20,j+25, 0.5):
         p = np.polyval(coef1,v)
         V.append(p)
-    print(V)
-    ss = [ i+1 for i in np.linspace(j+20, j+25, 11) ]
+
+    vector_pronostico = [ i+1 for i in np.linspace(j+20, j+25, 11) ]
     
     axs1.set_title("Prueba POT")
     axs1.plot(tiempo, vec_datos[j:j+21], c="b", linewidth="2", label='MEDICION')
-    axs1.scatter(ss, V[20:], c = "r")
+    axs1.scatter(vector_pronostico, V[20:], c = "r")
     plt.legend(loc='upper left', fontsize=8)
     axs1.grid()
     plt.pause(0.1)
 
-    num = float(input())
+    #num = float(input())
+    num = pedir_numero_flotante()
     vec_datos.append(num)
 
     V = [0.0 for i in range (0, 21)]
