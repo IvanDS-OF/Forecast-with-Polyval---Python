@@ -30,9 +30,9 @@ while True:
     for v in np.arange(j+20,j+25, 0.5):
         p = np.polyval(coef1,v)
         V.append(p)
-
+    print(V)
     ss = [ i+1 for i in np.linspace(j+20, j+25, 11) ]
-
+    
     axs1.set_title("Prueba POT")
     axs1.plot(tiempo, vec_datos[j:j+21], c="b", linewidth="2", label='MEDICION')
     axs1.scatter(ss, V[20:], c = "r")
